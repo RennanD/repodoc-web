@@ -18,7 +18,11 @@ export default function Home() {
           </p>
           {/* <SubscribeButton priceId={product.priceId} /> */}
         </div>
-        <img src="/images/avatar.svg" alt="Girl code" />
+        <img
+          className={styles.heroImage}
+          src="/images/hero.svg"
+          alt="Girl code"
+        />
       </section>
     </div>
   );

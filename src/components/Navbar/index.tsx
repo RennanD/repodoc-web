@@ -15,13 +15,13 @@ export function Navbar(): JSX.Element {
           </li>
           <li>
             <Link href="/login">
-              <a>Sign In</a>
+              <a>Entrar</a>
             </Link>
           </li>
 
           <li>
             <Link href="/signup">
-              <a>Sign Up</a>
+              <a className={styles.signupButton}>Criar conta</a>
             </Link>
           </li>
         </ul>

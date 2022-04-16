@@ -17,7 +17,7 @@
 
       li {
         & + li {
-          margin-left: 1rem;
+          margin-left: 2rem;
         }
       }
     }
@@ -25,5 +25,19 @@
 }
 
 .logo span {
-  color: #8257E5;
+  color: #633BBC;
+}
+
+.signupButton {
+  border-radius: 4px;
+  padding: 0.7rem;
+  border: 1px solid #633BBC;
+  color: #633BBC;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: #633BBC;
+    color: #fff;
+  }
 }
