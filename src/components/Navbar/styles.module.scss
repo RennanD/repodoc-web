@@ -1,0 +1,29 @@
+.container {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  
+  nav {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        & + li {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.logo span {
+  color: #8257E5;
+}
