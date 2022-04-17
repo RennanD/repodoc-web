@@ -1,7 +1,12 @@
+import { useRef, useState } from 'react';
+
 import { FiMail, FiUser, FiLock, FiCheck } from 'react-icons/fi';
 
-import { FormEvent, useState } from 'react';
+import { Form } from '@unform/web';
+import { FormHandles } from '@unform/core';
+
 import { toast } from 'react-toastify';
+
 import styles from './styles.module.scss';
 
 import { TextInput } from '../../components/Forms/TextInput';
@@ -9,14 +14,18 @@ import { Navbar } from '../../components/Navbar';
 import { Button } from '../../components/Forms/Button';
 import { api } from '../../services/api';
 
+type SignUpFormData = {
+  name: string;
+  email: string;
+  password: string;
+};
+
 export default function SignUp(): JSX.Element {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const formRef = useRef<FormHandles>(null);
+
   const [loading, setLoading] = useState(false);
 
-  async function handleSignUp(event: FormEvent) {
-    event.preventDefault();
+  async function handleSignUp({ email, name, password }: SignUpFormData) {
     setLoading(true);
     try {
       await api.post('/users', { name, email, password });
@@ -29,7 +38,6 @@ export default function SignUp(): JSX.Element {
         theme: 'colored',
         type: 'error',
       });
-      console.log(response);
     } finally {
       setLoading(false);
     }
@@ -53,31 +61,32 @@ export default function SignUp(): JSX.Element {
           </span>
         </div>
 
-        <form className={styles.form} onSubmit={handleSignUp}>
+        <Form
+          className={styles.form}
+          ref={formRef}
+          onSubmit={data => handleSignUp(data)}
+        >
           <h1>Formulário de cadastro</h1>
 
           <TextInput
+            name="name"
             label="Nome"
             id="name"
-            value={name}
-            onChange={e => setName(e.target.value)}
             icon={FiMail}
             placeholder="Nome completo..."
           />
           <TextInput
+            name="email"
             label="E-mail"
             id="email"
             type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
             placeholder="email@exemplo.com"
             icon={FiUser}
           />
           <TextInput
+            name="password"
             label="Senha"
             id="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
             icon={FiLock}
             placeholder="********"
             type="password"
@@ -88,7 +97,7 @@ export default function SignUp(): JSX.Element {
           <Button type="submit" icon={FiCheck} loading={loading}>
             Criar conta
           </Button>
-        </form>
+        </Form>
       </section>
     </div>
   );

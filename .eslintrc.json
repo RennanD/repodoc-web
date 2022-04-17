@@ -27,6 +27,7 @@
   "rules": {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
+    "no-param-reassign": "off",
     "react/button-has-type": "off",
     "react/require-default-props": "off",
     "jsx-a11y/anchor-is-valid": "off",
