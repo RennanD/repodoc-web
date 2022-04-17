@@ -14,7 +14,7 @@ export default function Home() {
           </h1>
           <p>
             Crie documentações de APIs de forma eficiente ou acesse as
-            documentações publicas do repodoc <br />
+            documentações publicas no repodoc. <br />
           </p>
           {/* <SubscribeButton priceId={product.priceId} /> */}
         </div>

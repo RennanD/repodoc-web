@@ -5,13 +5,17 @@ export function Navbar(): JSX.Element {
   return (
     <div className={styles.container}>
       <nav>
-        <h1 className={styles.logo}>
-          repodoc <span>.</span>
-        </h1>
+        <Link href="/">
+          <h1 className={styles.logo}>
+            repodoc <span>.</span>
+          </h1>
+        </Link>
 
         <ul>
           <li>
-            <a href="#docs">APIs populares</a>
+            <Link href="/#docs">
+              <a>APIs populares</a>
+            </Link>
           </li>
           <li>
             <Link href="/login">
