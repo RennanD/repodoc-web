@@ -5,16 +5,36 @@ import { Form } from '@unform/web';
 
 import { FiCheck, FiLock, FiUser } from 'react-icons/fi';
 
+import Link from 'next/link';
+import { toast } from 'react-toastify';
 import { Button } from '../../components/Forms/Button';
 import { TextInput } from '../../components/Forms/TextInput';
 import { Navbar } from '../../components/Navbar';
 
 import styles from './styles.module.scss';
+import { useAuth } from '../../hooks/auth';
+
+type SignInFormData = {
+  email: string;
+  password: string;
+};
 
 export default function Login(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
+  const { singIn } = useAuth();
 
   const [loading, setLoading] = useState(false);
+
+  async function handleSignIn({ email, password }: SignInFormData) {
+    setLoading(true);
+
+    try {
+      await singIn({ email, password });
+    } catch (error) {
+      toast('Não foi possível realizar o login');
+      setLoading(false);
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -30,14 +50,16 @@ export default function Login(): JSX.Element {
           </p>
           <span>
             Ainda não possui cadastro?{' '}
-            <a href="/signup">Crie agora uma conta.</a>
+            <Link href="/signup">
+              <a>Crie agora uma conta.</a>
+            </Link>
           </span>
         </div>
 
         <Form
           className={styles.form}
           ref={formRef}
-          onSubmit={data => console.log(data)}
+          onSubmit={data => handleSignIn(data)}
         >
           <h1>Formulário de login</h1>
 

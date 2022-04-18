@@ -7,6 +7,7 @@ import { FormHandles } from '@unform/core';
 
 import { toast } from 'react-toastify';
 
+import Link from 'next/link';
 import styles from './styles.module.scss';
 
 import { TextInput } from '../../components/Forms/TextInput';
@@ -57,7 +58,9 @@ export default function SignUp(): JSX.Element {
           </p>
           <span>
             Já possui conta? Realize seu login{' '}
-            <a href="/login">clicando aqui</a>
+            <Link href="/login">
+              <a>clicando aqui</a>
+            </Link>
           </span>
         </div>
 

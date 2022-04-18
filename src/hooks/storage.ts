@@ -1,4 +1,4 @@
-import { setCookie } from 'nookies';
+import { setCookie, parseCookies } from 'nookies';
 import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 
 import storageConfig from '../config/storage';
@@ -9,17 +9,13 @@ export function usePersistedState<T = unknown>(
   key: string,
   initialState: T,
 ): Response<T> {
-  const [state, setState] = useState<T>({} as T);
+  const [state, setState] = useState<T>(() => {
+    const cookieName = `${storageConfig.app_key}:${key}`;
 
-  useEffect(() => {
-    function loadingState() {
-      const storaged = localStorage.getItem(`${storageConfig.app_key}:${key}`);
+    const { [cookieName]: storagedValue } = parseCookies();
 
-      setState(storaged ? JSON.parse(storaged) : initialState);
-    }
-    loadingState();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    return storagedValue ? JSON.parse(storagedValue) : initialState;
+  });
 
   useEffect(() => {
     setCookie(
