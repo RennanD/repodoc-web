@@ -17,7 +17,7 @@ export default function Home() {
             Crie documentações de APIs de forma eficiente ou acesse as
             documentações publicas no repodoc. <br />
           </p>
-          <Link href="/signup">
+          <Link href="/auth/signup">
             <a className={styles.signupButton}>Criar minha documentação</a>
           </Link>
         </div>

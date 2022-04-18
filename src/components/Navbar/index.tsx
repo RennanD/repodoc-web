@@ -18,13 +18,13 @@ export function Navbar(): JSX.Element {
             </Link>
           </li>
           <li>
-            <Link href="/login">
+            <Link href="/auth/login">
               <a>Entrar</a>
             </Link>
           </li>
 
           <li>
-            <Link href="/signup">
+            <Link href="/auth/signup">
               <a className={styles.signupButton}>Criar conta</a>
             </Link>
           </li>

@@ -7,12 +7,12 @@ import { FiCheck, FiLock, FiUser } from 'react-icons/fi';
 
 import Link from 'next/link';
 import { toast } from 'react-toastify';
-import { Button } from '../../components/Forms/Button';
-import { TextInput } from '../../components/Forms/TextInput';
-import { Navbar } from '../../components/Navbar';
+import { Button } from '../../../components/Forms/Button';
+import { TextInput } from '../../../components/Forms/TextInput';
+import { Navbar } from '../../../components/Navbar';
 
 import styles from './styles.module.scss';
-import { useAuth } from '../../hooks/auth';
+import { useAuth } from '../../../hooks/auth';
 
 type SignInFormData = {
   email: string;
@@ -50,7 +50,7 @@ export default function Login(): JSX.Element {
           </p>
           <span>
             Ainda não possui cadastro?{' '}
-            <Link href="/signup">
+            <Link href="/auth/signup">
               <a>Crie agora uma conta.</a>
             </Link>
           </span>

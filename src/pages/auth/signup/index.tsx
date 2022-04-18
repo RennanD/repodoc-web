@@ -10,10 +10,10 @@ import { toast } from 'react-toastify';
 import Link from 'next/link';
 import styles from './styles.module.scss';
 
-import { TextInput } from '../../components/Forms/TextInput';
-import { Navbar } from '../../components/Navbar';
-import { Button } from '../../components/Forms/Button';
-import { api } from '../../services/api';
+import { TextInput } from '../../../components/Forms/TextInput';
+import { Navbar } from '../../../components/Navbar';
+import { Button } from '../../../components/Forms/Button';
+import { api } from '../../../services/api';
 
 type SignUpFormData = {
   name: string;
@@ -58,7 +58,7 @@ export default function SignUp(): JSX.Element {
           </p>
           <span>
             Já possui conta? Realize seu login{' '}
-            <Link href="/login">
+            <Link href="/auth/login">
               <a>clicando aqui</a>
             </Link>
           </span>
