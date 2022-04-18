@@ -12,6 +12,7 @@
     "@unform/web": "^2.1.6",
     "axios": "^0.26.1",
     "next": "12.1.5",
+    "nookies": "^2.5.2",
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-icons": "^4.3.1",
@@ -19,6 +20,7 @@
     "sass": "^1.50.0"
   },
   "devDependencies": {
+    "@types/cookie": "^0.5.0",
     "@types/node": "^17.0.24",
     "@types/react": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.19.0",

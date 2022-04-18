@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './styles.module.scss';
 
 import { Navbar } from '../components/Navbar';
@@ -16,7 +17,9 @@ export default function Home() {
             Crie documentações de APIs de forma eficiente ou acesse as
             documentações publicas no repodoc. <br />
           </p>
-          {/* <SubscribeButton priceId={product.priceId} /> */}
+          <Link href="/signup">
+            <a className={styles.signupButton}>Criar minha documentação</a>
+          </Link>
         </div>
         <img
           className={styles.heroImage}

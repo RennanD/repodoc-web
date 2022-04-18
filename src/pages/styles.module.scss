@@ -41,9 +41,26 @@
     font-size: 1.5rem;
     line-height: 2.25rem;
     margin-top: 1.5rem;
+    margin-bottom: 2rem;
   }
 }
 
 .heroImage {
   height: 300px;
+}
+
+.signupButton {
+  border-radius: 4px;
+  padding: 0.7rem;
+  background-color: #633BBC;
+  color: #FFF;
+
+  margin-top: 2rem;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    background-color: #633BBC;
+    color: #fff;
+  }
 }
