@@ -14,7 +14,7 @@ export default function Sidebar(): JSX.Element {
       </div>
 
       <nav>
-        <strong className={styles.sectionTitle}>Geral</strong>
+        {/* <strong className={styles.sectionTitle}>Geral</strong> */}
 
         <ul className={styles.listLinks}>
           <li className={styles.listItems}>
@@ -27,7 +27,7 @@ export default function Sidebar(): JSX.Element {
           </li>
         </ul>
 
-        <strong className={styles.sectionTitle}>Aplicação</strong>
+        {/* <strong className={styles.sectionTitle}>Aplicação</strong> */}
         <ul className={styles.listLinks}>
           <li className={styles.listItems}>
             <Link href="/app/organizations">
