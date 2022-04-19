@@ -1,7 +1,11 @@
 import Router from 'next/router';
+
 import { createContext, ReactNode, useContext, useEffect } from 'react';
-import { api } from '../services/api';
+
+import { destroyCookie } from 'nookies';
 import { usePersistedState } from './storage';
+
+import { api } from '../services/api';
 
 type UserData = {
   name: string;
@@ -17,6 +21,7 @@ type AuthContextData = {
   user: UserData;
   isAuthenticated: boolean;
   singIn: (data: SignInData) => Promise<void>;
+  signOut: () => void;
 };
 
 type AuthProviderProps = {
@@ -33,8 +38,8 @@ type AxiosResponse = {
 const AuthContext = createContext({} as AuthContextData);
 
 export function AuthProvider({ children }: AuthProviderProps) {
-  const [user, setUser] = usePersistedState<UserData>('user', {} as UserData);
-  const [token, setToken] = usePersistedState('token', '');
+  const [user, setUser] = usePersistedState<UserData | null>('user', null);
+  const [token, setToken] = usePersistedState<string | null>('token', null);
 
   async function handleSignIn({ email, password }: SignInData) {
     const response = await api.post<AxiosResponse>('/auth', {
@@ -47,7 +52,14 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setToken(auth.token);
     setUser(auth.user);
 
-    Router.push('/dashboard');
+    Router.push('/app/dashboard');
+  }
+
+  function handleSignOut() {
+    setToken(null);
+    setUser(null);
+
+    Router.push('/auth/login');
   }
 
   useEffect(() => {
@@ -58,7 +70,12 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   return (
     <AuthContext.Provider
-      value={{ user, singIn: handleSignIn, isAuthenticated: !!token }}
+      value={{
+        user,
+        singIn: handleSignIn,
+        isAuthenticated: !!token,
+        signOut: handleSignOut,
+      }}
     >
       {children}
     </AuthContext.Provider>

@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { FiFolder, FiGrid, FiLogOut, FiUsers } from 'react-icons/fi';
+import { useAuth } from '../../hooks/auth';
 import { SidebarLink } from './SidebarLink';
 import styles from './styles.module.scss';
 
 export default function Sidebar(): JSX.Element {
+  const { signOut } = useAuth();
+
   return (
     <aside className={styles.container}>
       <div className={styles.logoContainer}>
@@ -44,12 +47,10 @@ export default function Sidebar(): JSX.Element {
       </nav>
 
       <footer>
-        <Link href="/app/organizations">
-          <a className={styles.logOutButton}>
-            <FiLogOut />
-            Sair da aplicação
-          </a>
-        </Link>
+        <button type="button" onClick={signOut} className={styles.logOutButton}>
+          <FiLogOut />
+          Sair da aplicação
+        </button>
       </footer>
     </aside>
   );
