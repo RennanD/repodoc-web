@@ -1,0 +1,25 @@
+.banner {
+  display: flex;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  color: #fff;
+  background: url('/images/overlay.svg') center/cover, linear-gradient(268.9deg, #1071f2 0%, #635dff 99.86%);
+
+  margin-bottom: 2rem;
+
+  img {
+    height: 180px;
+  }
+
+}
+
+.bannerTitle {
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+.bannerText {
+  max-width: 80%;
+}

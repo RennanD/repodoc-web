@@ -37,7 +37,7 @@ export default function Sidebar(): JSX.Element {
           <li className={styles.listItems}>
             <SidebarLink href="/app/documentations">
               <FiFolder />
-              Organizações
+              Documentações
             </SidebarLink>
           </li>
         </ul>
