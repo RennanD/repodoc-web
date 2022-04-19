@@ -1,0 +1,30 @@
+.link {
+  background-color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: normal;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 0px auto;
+  transition: all 0.2s ease 0s;
+
+  svg {
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    color: #633BBC;
+  }
+}
+
+.activeLink {
+  color: #633BBC;
+  background-color: rgb(242, 242, 250);
+}

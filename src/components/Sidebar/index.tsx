@@ -1,47 +1,44 @@
 import Link from 'next/link';
 import { FiFolder, FiGrid, FiLogOut, FiUsers } from 'react-icons/fi';
+import { SidebarLink } from './SidebarLink';
 import styles from './styles.module.scss';
 
 export default function Sidebar(): JSX.Element {
   return (
     <aside className={styles.container}>
       <div className={styles.logoContainer}>
-        <a href="">
-          <h1>
-            repodoc <span>.</span>
-          </h1>
-        </a>
+        <Link href="/app/dashboard">
+          <a>
+            <h1>
+              repodoc <span>.</span>
+            </h1>
+          </a>
+        </Link>
       </div>
 
       <nav>
         <ul className={styles.listLinks}>
           <li className={styles.listItems}>
-            <Link href="/app/dashboard">
-              <a className={styles.activeLink}>
-                <FiGrid />
-                Painel
-              </a>
-            </Link>
+            <SidebarLink href="/app/dashboard">
+              <FiGrid />
+              Painel
+            </SidebarLink>
           </li>
         </ul>
 
         <ul className={styles.listLinks}>
           <li className={styles.listItems}>
-            <Link href="/app/organizations">
-              <a>
-                <FiUsers />
-                Organizações
-              </a>
-            </Link>
+            <SidebarLink href="/app/organizations">
+              <FiUsers />
+              Organizações
+            </SidebarLink>
           </li>
 
           <li className={styles.listItems}>
-            <Link href="/app/organizations">
-              <a>
-                <FiFolder />
-                Documentações
-              </a>
-            </Link>
+            <SidebarLink href="/app/documentations">
+              <FiFolder />
+              Organizações
+            </SidebarLink>
           </li>
         </ul>
       </nav>
