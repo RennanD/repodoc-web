@@ -3,65 +3,16 @@
 }
 
 .content {
-  
   width: calc(100% - 17rem);
-  max-width: 1120px;
   margin: 0 auto;
 
-  header {
-    display: flex;
-    padding: 2rem 3rem;
-    align-items: center;
-    justify-content: space-around;
-
-    p {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      
-      > div {
-        margin-right: 1rem;
-      }
-    }
-  }
-
-  hr {
-    margin-bottom: 1rem;
-    border: 0;
-
-    height: 1px;
-
-    background-color: #ddd;
-  }
-}
-
-.iconContainer {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: #E1E1E6;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .sectionPage {
   padding: 2rem 3rem;
-}
 
-.visitGithub {
-  display: flex;
-  align-items: center;
-  border-radius: 4px;
-  padding: 0.7rem;
-  border: 1px solid #633BBC;
-  background-color: #633BBC;
-  color: #fff;
-
-  transition: background-color 0.2s ease, color 0.2s ease;
-
-  svg {
-    margin-right: 0.5rem;
+  h2 {
+    margin-bottom: 2rem;
   }
 }
+

@@ -1,0 +1,61 @@
+.container {
+  
+  border: 1px solid #ddd;
+  border-radius: 0.3rem;
+
+  padding: 2rem;
+
+  display: flex;
+
+  cursor: pointer;
+
+  margin-bottom: 2rem;
+
+}
+
+
+.cardTitle {
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.iconContainer {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #E1E1E6;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 1.25rem;
+  
+}
+
+.cardBody {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.linkContainer {
+  margin-left: auto;
+
+  transition: color 0.2s ease;
+  
+  p {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-left: 1rem;
+    }
+  }
+
+  &:hover {
+    color: #633BBC;
+  }
+}

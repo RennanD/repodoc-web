@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FiFolder, FiGrid, FiLogOut, FiUser } from 'react-icons/fi';
+import { FiFolder, FiGrid, FiLogOut, FiUsers } from 'react-icons/fi';
 import styles from './styles.module.scss';
 
 export default function Sidebar(): JSX.Element {
@@ -14,8 +14,6 @@ export default function Sidebar(): JSX.Element {
       </div>
 
       <nav>
-        {/* <strong className={styles.sectionTitle}>Geral</strong> */}
-
         <ul className={styles.listLinks}>
           <li className={styles.listItems}>
             <Link href="/app/dashboard">
@@ -27,12 +25,11 @@ export default function Sidebar(): JSX.Element {
           </li>
         </ul>
 
-        {/* <strong className={styles.sectionTitle}>Aplicação</strong> */}
         <ul className={styles.listLinks}>
           <li className={styles.listItems}>
             <Link href="/app/organizations">
               <a>
-                <FiUser />
+                <FiUsers />
                 Organizações
               </a>
             </Link>
